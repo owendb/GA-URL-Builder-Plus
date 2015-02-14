@@ -31,7 +31,16 @@
   <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
   <link rel="shortcut icon" href="img/favicon.png">
   
+<!-- Change source and medium here -->
+<!-- Use the same names as you add in the dropdown coded further down -->
+<!--
 
+Example
+
+  if		(mysource == "foo" || mysource == "bar"){document.ctm.utm_medium.value = "foobar";}	
+  else if	(mysource == "x" || mysource == "y"){document.ctm.utm_medium.value = "z";}	
+
+ -->
 	
 		<script type="text/javascript"><!--
 
@@ -39,11 +48,8 @@
 
          mysource = source;
 
-         if(mysource == "FacebookAd" || mysource == "twitter" || mysource == "youtube" || mysource == "flickr" || mysource == "pinterest" || mysource == "FacebookPost"){
-
-         document.ctm.utm_medium.value = "social";
-
-}		else if (mysource == "email_signature" || mysource == "general_enews" || mysource == "single_enews" || mysource == "email_signature"){
+if(mysource == "FacebookAd" || mysource == "twitter" || mysource == "youtube" || mysource == "flickr" || mysource == "pinterest" || mysource == "FacebookPost"){document.ctm.utm_medium.value = "social";}
+else if (mysource == "email_signature" || mysource == "general_enews" || mysource == "single_enews" || mysource == "email_signature"){
 
          document.ctm.utm_medium.value = "email";
 
@@ -60,7 +66,10 @@
 }
 
 		</script>
-		
+
+
+<!-- add your bit.ly username & api key here. NB you need the old api key -->
+
 <script type="text/javascript">
 $(document).ready(function()
 {
@@ -68,8 +77,12 @@ $(document).ready(function()
 function bit_url(url)
 {
 var url=url;
+
+
 var username="";
 var key="";
+
+
 $.ajax({
 url:"http://api.bit.ly/v3/shorten",
 data:{longUrl:url,apiKey:key,login:username},
