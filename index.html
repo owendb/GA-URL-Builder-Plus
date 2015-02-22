@@ -6,83 +6,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-
-	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
-	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
-	<!--script src="js/less-1.3.3.min.js"></script-->
-	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
-	
-	<link href="http://minikomi.github.io/Bootstrap-Form-Builder/assets/css/lib/bootstrap.min.css" rel="stylesheet">
-	<link href="http://minikomi.github.io/Bootstrap-Form-Builder/assets/css/lib/bootstrap-responsive.min.css" rel="stylesheet">
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/scripts.js"></script>
-
-
+ 
+            <!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+            <!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+            <!--script src="js/less-1.3.3.min.js"></script-->
+            <!--append ‘#!watch’ to the browser URL, then refresh the page. -->
+           
+            <link href="http://minikomi.github.io/Bootstrap-Form-Builder/assets/css/lib/bootstrap.min.css" rel="stylesheet">
+            <link href="http://minikomi.github.io/Bootstrap-Form-Builder/assets/css/lib/bootstrap-responsive.min.css" rel="stylesheet">
+            <script type="text/javascript" src="js/jquery.min.js"></script>
+            <script type="text/javascript" src="js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="js/scripts.js"></script>
+ 
+ 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
   <![endif]-->
-
+ 
   <!-- Fav and touch icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
   <link rel="shortcut icon" href="img/favicon.png">
-  
+ 
 <!-- Change source and medium here -->
 <!-- Use the same names as you add in the dropdown coded further down -->
 <!--
-
+ 
 Example
-
-  if		(mysource == "foo" || mysource == "bar"){document.ctm.utm_medium.value = "foobar";}	
-  else if	(mysource == "x" || mysource == "y"){document.ctm.utm_medium.value = "z";}	
-
- -->
-	
-		<script type="text/javascript"><!--
-
-		function setmedium(source) {
-
+ 
+  if                    (mysource == "foo" || mysource == "bar"){document.ctm.utm_medium.value = "foobar";}   
+  else if (mysource == "x" || mysource == "y"){document.ctm.utm_medium.value = "z";}      
+ 
+-->
+           
+                        <script type="text/javascript"><!--
+ 
+                        function setmedium(source) {
+ 
          mysource = source;
-
+ 
 if(mysource == "FacebookAd" || mysource == "twitter" || mysource == "youtube" || mysource == "flickr" || mysource == "pinterest" || mysource == "FacebookPost"){document.ctm.utm_medium.value = "social";}
 else if (mysource == "email_signature" || mysource == "general_enews" || mysource == "single_enews" || mysource == "email_signature"){
-
+ 
          document.ctm.utm_medium.value = "email";
-
-}		else if (mysource == "newsadvert" || mysource == "newsarticle" || mysource == "pressrelease"){
-
+ 
+}                      else if (mysource == "newsadvert" || mysource == "newsarticle" || mysource == "pressrelease"){
+ 
          document.ctm.utm_medium.value = "press";
-
-}		else if (mysource == "poster" || mysource == "paidposter"){
-
+ 
+}                      else if (mysource == "poster" || mysource == "paidposter"){
+ 
          document.ctm.utm_medium.value = "outdoor";
-
+ 
 }
-
+ 
 }
-
-		</script>
-
-
+ 
+                        </script>
+ 
+ 
 <!-- add your bit.ly username & api key here. NB you need the old api key -->
-
+ 
 <script type="text/javascript">
 $(document).ready(function()
 {
-
+ 
 function bit_url(url)
 {
 var url=url;
-
-
+ 
+ 
 var username="";
 var key="";
-
-
+ 
+ 
 $.ajax({
 url:"http://api.bit.ly/v3/shorten",
 data:{longUrl:url,apiKey:key,login:username},
@@ -94,10 +94,10 @@ $("#result").html('<a href="'+bit_url+'" target="_blank">'+bit_url+'</a>');
 }
 });
 }
-
-
+ 
+ 
 $("#url").focus();
-
+ 
 $("#short").click(function()
 {
 var url=$("#url").val();
@@ -115,47 +115,81 @@ alert("Bad URL");
 }
 return false;
 });
-
-
+ 
+ 
 });
 </script>
-		
+                       
 </head>
-
+ 
 <body>
 <div class="container" style="max-width:500px">
-	<div class="row clearfix">
-		<div class="col-md-2 column">
-		</div>
-		<div class="col-md-6 column">
-
-			<div class="page-header">
-				<h1>
-					GA URL Builder Plus
-				</h1>
-			</div>
-
-			<form class="form-horizontal" name="ctm" onsubmit="createURL(); return false;">
+            <div class="row clearfix">
+                        <div class="col-md-2 column">
+                        </div>
+                        <div class="col-md-6 column">
+ 
+                                    <div class="page-header">
+                                                <h1>
+                                                            GA URL Builder Plus
+                                                </h1>
+                                    </div>
+                                   
+<strong>Simplified Google Analytics campaign parameter URL tracking builder</strong>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseintro">
+          <small>What is this?</small>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseintro" class="panel-collapse collapse">
+            <p>A simplified URL parameter builder for use in orgs with multiple staff posting links, create rules to link source and medium, ensure consistent spellings for campaign names and built in URL shortening with Bit.ly.
+            </p>
+                        <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapsewhy">
+          <small>Why does this exist?</small>
+        </a>
+      </h4>
+ 
+    <div id="collapsewhy" class="panel-collapse collapse">
+We built this to ensure all staff who are posting links in social media and emails can add Google Analytics campaign tracking without having to ask colleagues about how to track links and not being so confusing as to give up.
+Since we started using it almost every link that goes out is tracked and tracked in a consistent way, nice clean crisp data in Google Analytics. As a bonus it's got built in Bit.ly shortening
+</div>
+            </div>
+ 
+ 
+           
+           
+   
+  </div>                                   
+                                   
+                                   
+                                   
+                                   
+ 
+                                    <form class="form-horizontal" name="ctm" onsubmit="createURL(); return false;">
 <fieldset>
-
+ 
 <!-- Form Name -->
-
+ 
 <!-- Text input-->
 <h1><small>Step 1: Paste URL the box below.</small></h1>
 <div class="control-group">
   <label class="control-label" for="website">URL</label>
   <div class="controls">
     <input id="website" name="website" type="text" placeholder="E.G. http://www.example.com/campaign" class="input-xlarge" >
-	<input name="utm_id" type="hidden" size="1" maxlength="1">
-
-
+            <input name="utm_id" type="hidden" size="1" maxlength="1">
+ 
+ 
   </div>
 </div>
 <h1><small>Step 2: Fill out the placement details below</small></h1>
 <!-- Select Basic -->
-
+ 
 <script type="text/javascript">
-
+ 
 function changeSubcat(val)
 {
   var utm_content = document.getElementById('utm_content');
@@ -166,44 +200,44 @@ function changeSubcat(val)
     utm_content.style.display = 'none';
   }
 }
-
-
+ 
+ 
 </script>
 <div class="control-group">
   <label class="control-label" for="utm_source">Placement</label>
   <div class="controls">
     <select id="utm_source" name="utm_source" class="input-xlarge" onchange="setmedium(this.value); javascript: changeSubcat(this.options[this.selectedIndex].value);">
-	<option>-</option>
-	<optgroup label="Social">
-	 <option value="FacebookPost">Facebook Post</option>
-	 <option value="FacebookAd">Facebook Ad</option>
-	 <option value="twitter">Twitter</option>
-	 <option value="youtube">YouTube</option>
-	 <option value="pinterest">Pinterest</option>
-	 <option value="flickr">Flickr</option>
-	 <optgroup label="Email">
-	 <option value="email_signature">Email signature</option>
-	 <option value="general_enews">Monthly Enews</option>
-	 <option value="single_enews">Single Enews</option>
-	 <optgroup label="Display">
+            <option>-</option>
+            <optgroup label="Social">
+            <option value="FacebookPost">Facebook Post</option>
+            <option value="FacebookAd">Facebook Ad</option>
+            <option value="twitter">Twitter</option>
+            <option value="youtube">YouTube</option>
+            <option value="pinterest">Pinterest</option>
+            <option value="flickr">Flickr</option>
+            <optgroup label="Email">
+            <option value="email_signature">Email signature</option>
+            <option value="general_enews">Monthly Enews</option>
+            <option value="single_enews">Single Enews</option>
+            <optgroup label="Display">
      <option value="Banner">Banner</option>
-	 <optgroup label="Outdoor">
+            <optgroup label="Outdoor">
      <option value="Poster">Poster</option>
     </select>
   </div>
 </div>
-
-
-
+ 
+ 
+ 
 <!-- Text input-->
-
-
+ 
+ 
 <div style="display: none;" id="utm_content">
 <div class="control-group" >
   <label class="control-label" for="utm_content">Edition</label>
   <div class="controls">
     <input  name="utm_content" type="text" placeholder="E.G. June2013" class="input-xlarge">
-    
+   
   </div>
 </div>
 </div>
@@ -212,19 +246,19 @@ function changeSubcat(val)
   <label class="control-label" for="utm_campaign">Campaign</label>
   <div class="controls">
     <select id="utm_campaign" name="utm_campaign" class="input-xlarge">
-	  <option>-</option>
-     	  <option>London Marathon</option>
-	  <option>Research News</option>
-	  <option>Ice Bucket Challenge</option>
-	  <option>Our great Campaign</option>
+              <option>-</option>
+              <option>London Marathon</option>
+              <option>Research News</option>
+              <option>Ice Bucket Challenge</option>
+              <option>Our great Campaign</option>
     </select>
   </div>
 </div>
-
+ 
 <!--Medium field: hidden and populated based on source-->
-
+ 
 <input name="utm_medium" id="utm_medium"  type="hidden">
-
+ 
 <!-- Text input-->
 <div class="control-group">
   <label class="control-label" for="utm_term">Keywords</label>
@@ -242,27 +276,27 @@ function changeSubcat(val)
     <input value="Clear" onClick="clearURL();" type="button" class="btn btn-danger">
   </div>
 </div>
-
+ 
 <!-- Text input-->
 <div class="control-group">
   <label class="control-label" for="url">Tracked link</label>
   <div class="controls">
     <input id="url" name="url" type="text" placeholder="" class="input-xlarge">
-    
+   
   </div>
 </div>
-
+ 
 <!-- Button -->
 <div class="control-group">
   <label class="control-label" for="singlebutton"></label>
   <div class="controls">
-	<input type="button" id="short" value="Shorten with Bit.ly" class="btn btn-default" />
-	<br>
-    <div id="result"></div> 
-	<div id="su"></div>
+            <input type="button" id="short" value="Shorten with Bit.ly" class="btn btn-default" />
+            <br>
+    <div id="result"></div>
+            <div id="su"></div>
   </div>
 </div>
-
+ 
 </fieldset>
 </form>
 <script language="javascript" type="text/javascript"> function createURL() { var form = document.ctm; var myurl = ""
@@ -317,24 +351,24 @@ return encodeURIComponent(value);
     </div>
     <div id="collapseOne" class="panel-collapse collapse">
       <div class="panel-body">
-		<br><br>
+                        <br><br>
         <h3>What is this?</h3>
-		<p>This tool has been designed to let multiple users across an organisation add Google Analytics URL tracking to their links in a consistent way that doesn't require indepth knowledge of Google Analyics. Resulting in clean crisp campaign data in Google Analytics and people not having to worry about whether something is a 'medium' or a 'source'. It's a suped up but simplified version of <a href="https://support.google.com/analytics/answer/1033867?hl=en-GB">this</a>.</p>
-		<h3>Why track links?</h3>
-		<p>By tracking links that we can find out how the people who clicked the link used our website. For eaxmple: How many people clicked, what time they clicked, whether they went on to transact on our website etc... For more information check one of these blogs: <a href="http://www.orbitmedia.com/blog/google-analytics-url-builder/">1</a> <a href="<a href="http://sproutsocial.com/insights/google-analytics/">2</a></p>
-		<h3>How do we track links?</h3>
-		<p>This form will add a small piece of text onto the end of your link. If it's too long we can then shorten it with bit.ly</p>
-		<h3>How do I install this?</h3>
-		<p>See this <a>Readme</a></p>
-		<h3>How do I add a campaign?</h3>
-		<p>See this <a>Readme</a></p>
-		<h3>How do I add a new source medium?</h3>
-		<p>See this <a>Readme</a></p>
-		<h3>Why doesn't the bit.ly button work?</h3>
-		<p>See this <a>Readme</a></p>
-		<h3>Why doesn't the bit.ly button work?</h3>
-		<p>See this <a>Readme</a></p>
-	  </div>
+                        <p>This tool has been designed to let multiple users across an organisation add Google Analytics URL tracking to their links in a consistent way that doesn't require indepth knowledge of Google Analyics. Resulting in clean crisp campaign data in Google Analytics and people not having to worry about whether something is a 'medium' or a 'source'. It's a suped up but simplified version of <a href="https://support.google.com/analytics/answer/1033867?hl=en-GB">this</a>.</p>
+                        <h3>Why track links?</h3>
+                        <p>By tracking links that we can find out how the people who clicked the link used our website. For eaxmple: How many people clicked, what time they clicked, whether they went on to transact on our website etc... For more information check one of these blogs: <a href="http://www.orbitmedia.com/blog/google-analytics-url-builder/">1</a> <a href="<a href="http://sproutsocial.com/insights/google-analytics/">2</a></p>
+                        <h3>How do we track links?</h3>
+                        <p>This form will add a small piece of text onto the end of your link. If it's too long we can then shorten it with bit.ly</p>
+                        <h3>How do I install this?</h3>
+                        <p>See this <a>Readme</a></p>
+                        <h3>How do I add a campaign?</h3>
+                        <p>See this <a>Readme</a></p>
+                        <h3>How do I add a new source medium?</h3>
+                        <p>See this <a>Readme</a></p>
+                        <h3>Why doesn't the bit.ly button work?</h3>
+                        <p>See this <a>Readme</a></p>
+                        <h3>Why doesn't the bit.ly button work?</h3>
+                        <p>See this <a>Readme</a></p>
+              </div>
     </div>
   </div>
   <div class="panel panel-default">
@@ -348,26 +382,26 @@ return encodeURIComponent(value);
     <div id="collapseTwo" class="panel-collapse collapse">
       <div class="panel-body">
         <strong>Built by</strong><br><br>
-		<div style="float:left;padding-right:60px"><img src="http://leukaemialymphomaresearch.org.uk/sites/all/themes/llr/assets/images/site/logo.png"><br><br><br>
-		<p><a href="https://twitter.com/tweetsfromowen">@tweetsfromowen</a> <a href="https://twitter.com/james_south">@james_south</a></p>
-		</div>
-		<div style="float:left">
-		<img src="http://www.royalmarsden.org/view.image?Id=1264">
-		<p><a href="https://twitter.com/thomasmpreston">@thomasmpreston</a></p><br>
-		</div><br><div style=" clear: both; float: left; display: block; position: relative;">
-		<strong>Using code examples from</strong><a href="https://support.google.com/analytics/answer/1033867?hl=en-GB"> Google</a> & <a href="http://www.9lessons.info/2010/08/create-bitly-short-urls-using-jquery.htmlTech">9 lessons</a><br><br>
-		<strong>Nifty Bootstrap courtesy of</strong> <a href="http://www.layoutit.com/">Layoutit</a> & <a href="http://minikomi.github.io/Bootstrap-Form-Builder/">Minikomi</a> <br><br>
-		Github repo <a>here</a> fork and improve.
-	</div>
-	</div>
+                        <div style="float:left;padding-right:60px"><img src="http://leukaemialymphomaresearch.org.uk/sites/all/themes/llr/assets/images/site/logo.png"><br><br><br>
+                        <p><a href="https://twitter.com/tweetsfromowen">@tweetsfromowen</a> <a href="https://twitter.com/james_south">@james_south</a></p>
+                        </div>
+                        <div style="float:left">
+                        <img src="http://www.royalmarsden.org/view.image?Id=1264">
+                        <p><a href="https://twitter.com/thomasmpreston">@thomasmpreston</a></p><br>
+                        </div><br><div style=" clear: both; float: left; display: block; position: relative;">
+                        <strong>Using code examples from</strong><a href="https://support.google.com/analytics/answer/1033867?hl=en-GB"> Google</a> & <a href="http://www.9lessons.info/2010/08/create-bitly-short-urls-using-jquery.htmlTech">9 lessons</a><br><br>
+                        <strong>Nifty Bootstrap courtesy of</strong> <a href="http://www.layoutit.com/">Layoutit</a> & <a href="http://minikomi.github.io/Bootstrap-Form-Builder/">Minikomi</a> <br><br>
+                        Github repo <a>here</a> fork and improve.
+            </div>
+            </div>
     </div>
   </div>
 </div>
-
-		</div>
-		<div class="col-md-4 column">
-		</div>
-	</div>
+ 
+                        </div>
+                        <div class="col-md-4 column">
+                        </div>
+            </div>
 </div>
 </body>
 </html>
