@@ -26,7 +26,11 @@ Kinda, Google made this which is a good start https://support.google.com/analyti
 
 ###Before use
 
-Change the bit.ly
+Log in to your bit.ly account. Open index.html and find 
+
+```
+test
+```
 
 ###Adding your campaigns
 
