@@ -140,29 +140,81 @@ return false;
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseintro">
-          <small>What is this?</small>
+          <small>more info +</small>
         </a>
       </h4>
     </div>
     <div id="collapseintro" class="panel-collapse collapse">
-            <p>A simplified URL parameter builder for use in orgs with multiple staff posting links, create rules to link source and medium, ensure consistent spellings for campaign names and built in URL shortening with Bit.ly.
-            </p>
+            <p>A simplified URL parameter builder for use in orgs with multiple staff posting links.
+            </p>This tool has been designed to let multiple users across an organisation add Google Analytics URL tracking to their links in a consistent way that doesn't require indepth knowledge of Google Analyics. Resulting in clean crisp campaign data in Google Analytics and people not having to worry about whether something is a 'medium' or a 'source'. It's a suped up but simplified version of <a href="https://support.google.com/analytics/answer/1033867?hl=en-GB" target="_blank">this</a>. As a bonus it's got built in Bit.ly shortening
+                        
                         <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapsewhy">
-          <small>Why does this exist?</small>
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapsewhylinks">
+          <small>Why track links?</small>
+        </a>
+      </h4>
+           <div id="collapsewhylinks" class="panel-collapse collapse">By tracking links that we can find out how the people who clicked the link used our website. For eaxmple: How many people clicked, what time they clicked, whether they went on to transact on our website etc... For more information check one of these blogs: <a href="http://www.orbitmedia.com/blog/google-analytics-url-builder/">1</a> <a href="<a href="http://sproutsocial.com/insights/google-analytics/">2</a></div>
+                        <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseinst">
+          <small>Setup instructions</small>
         </a>
       </h4>
  
-    <div id="collapsewhy" class="panel-collapse collapse">
-We built this to ensure all staff who are posting links in social media and emails can add Google Analytics campaign tracking without having to ask colleagues about how to track links and not being so confusing as to give up.
-Since we started using it almost every link that goes out is tracked and tracked in a consistent way, nice clean crisp data in Google Analytics. As a bonus it's got built in Bit.ly shortening
+    <div id="collapseinst" class="panel-collapse collapse">
+<ul>
+<li>
+Sign up to bit.ly. In the settings section copy the legacy api key and your user name. Open this file (index.html) in a text editor and find and replace the bit.ly account listed with your own account
+<div class="well well-sm">user:blah<br>pass:blah</div>
+</li>
+<li>
+Add your campaigns to the dropdown by finding this section of code in this file
+<div class="well well-sm">user:blah<br>pass:blah</div>
+</li>
+<li>
+Create any new rules you need
+</li>
+<li>
+Host the whole folder on a network drive or on an internal server (the bit.ly api is stored in the open so you don't want this somewhere publically accessible, the trade off in security makes the tool a lot more portable and not requiring server side scripting)
+</li>  
+</ul>
 </div>
+
+<div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          <small>Credits</small>
+        </a>
+      </h4>
+    </div>
+
+<div id="collapseTwo" class="panel-collapse collapse">
+<div class="panel-body">
+<strong>Built by</strong><br><br>
+                        <div style="float:left;padding-right:60px"><img src="http://leukaemialymphomaresearch.org.uk/sites/all/themes/llr/assets/images/site/logo.png"><br><br><br>
+                        <p><a href="https://twitter.com/tweetsfromowen">@tweetsfromowen</a> <a href="https://twitter.com/james_south">@james_south</a></p>
+                        </div>
+                        <div style="float:left">
+                        <img src="http://www.royalmarsden.org/view.image?Id=1264">
+                        <p><a href="https://twitter.com/thomasmpreston">@thomasmpreston</a></p><br>
+                        </div><br><div style=" clear: both; float: left; display: block; position: relative;">
+                        <strong>Using code examples from</strong><a href="https://support.google.com/analytics/answer/1033867?hl=en-GB"> Google</a> & <a href="http://www.9lessons.info/2010/08/create-bitly-short-urls-using-jquery.htmlTech">9 lessons</a><br><br>
+                        <strong>Nifty Bootstrap courtesy of</strong> <a href="http://www.layoutit.com/">Layoutit</a> & <a href="http://minikomi.github.io/Bootstrap-Form-Builder/">Minikomi</a> <br><br>
+                        Github repo <a href="https://github.com/owendb/GA-URL-Builder-Plus" target="_blank">here</a> fork and improve.<br><br><br><br><br>
+            </div>
+            </div>
+    </div>
+  </div>
+
+
             </div>
  
  
            
-           
-   
+            <a href="https://github.com/owendb/GA-URL-Builder-Plus/fork">Download .zip</a> 
+<br>
+   <a href="https://github.com/owendb/GA-URL-Builder-Plus/fork">Fork on GitHub</a>
+
+
   </div>                                   
                                    
                                    
@@ -340,67 +392,7 @@ value = value.split(' ').join('+');
 return encodeURIComponent(value);
 }
 </script>
-<div class="panel-group" id="accordion">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-          FAQs
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse">
-      <div class="panel-body">
-                        <br><br>
-        <h3>What is this?</h3>
-                        <p>This tool has been designed to let multiple users across an organisation add Google Analytics URL tracking to their links in a consistent way that doesn't require indepth knowledge of Google Analyics. Resulting in clean crisp campaign data in Google Analytics and people not having to worry about whether something is a 'medium' or a 'source'. It's a suped up but simplified version of <a href="https://support.google.com/analytics/answer/1033867?hl=en-GB">this</a>.</p>
-                        <h3>Why track links?</h3>
-                        <p>By tracking links that we can find out how the people who clicked the link used our website. For eaxmple: How many people clicked, what time they clicked, whether they went on to transact on our website etc... For more information check one of these blogs: <a href="http://www.orbitmedia.com/blog/google-analytics-url-builder/">1</a> <a href="<a href="http://sproutsocial.com/insights/google-analytics/">2</a></p>
-                        <h3>How do we track links?</h3>
-                        <p>This form will add a small piece of text onto the end of your link. If it's too long we can then shorten it with bit.ly</p>
-                        <h3>How do I install this?</h3>
-                        <p>See this <a>Readme</a></p>
-                        <h3>How do I add a campaign?</h3>
-                        <p>See this <a>Readme</a></p>
-                        <h3>How do I add a new source medium?</h3>
-                        <p>See this <a>Readme</a></p>
-                        <h3>Why doesn't the bit.ly button work?</h3>
-                        <p>See this <a>Readme</a></p>
-                        <h3>Why doesn't the bit.ly button work?</h3>
-                        <p>See this <a>Readme</a></p>
-              </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-          <small>Credits</small>
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse">
-      <div class="panel-body">
-        <strong>Built by</strong><br><br>
-                        <div style="float:left;padding-right:60px"><img src="http://leukaemialymphomaresearch.org.uk/sites/all/themes/llr/assets/images/site/logo.png"><br><br><br>
-                        <p><a href="https://twitter.com/tweetsfromowen">@tweetsfromowen</a> <a href="https://twitter.com/james_south">@james_south</a></p>
-                        </div>
-                        <div style="float:left">
-                        <img src="http://www.royalmarsden.org/view.image?Id=1264">
-                        <p><a href="https://twitter.com/thomasmpreston">@thomasmpreston</a></p><br>
-                        </div><br><div style=" clear: both; float: left; display: block; position: relative;">
-                        <strong>Using code examples from</strong><a href="https://support.google.com/analytics/answer/1033867?hl=en-GB"> Google</a> & <a href="http://www.9lessons.info/2010/08/create-bitly-short-urls-using-jquery.htmlTech">9 lessons</a><br><br>
-                        <strong>Nifty Bootstrap courtesy of</strong> <a href="http://www.layoutit.com/">Layoutit</a> & <a href="http://minikomi.github.io/Bootstrap-Form-Builder/">Minikomi</a> <br><br>
-                        Github repo <a>here</a> fork and improve.
-            </div>
-            </div>
-    </div>
-  </div>
-</div>
- 
-                        </div>
-                        <div class="col-md-4 column">
-                        </div>
+
             </div>
 </div>
 </body>
