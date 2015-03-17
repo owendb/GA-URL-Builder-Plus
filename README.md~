@@ -12,31 +12,32 @@ We built a [webpage tool](#) to replace <a href="https://support.google.com/anal
 
 
 
-Sign up to bit.ly. In the settings section copy the legacy api key and your user name. Open this file (index.html) in a text editor and find and replace the bit.ly account listed with your own account.<br><br>
-```
-$(document).ready(function()<br>
-{<br>
- function bit_url(url)<br>
-{<br>
-var url=url;<br><br>
-<strong>var username="";<br>
-var key="";</strong><br><br>
-$.ajax({<br>
-url:"http://api.bit.ly/v3/shorten",<br>
-data:{longUrl:url,apiKey:key,login:username},<br>
-dataType:"jsonp",<br>
-success:function(v)<br>
-{<br>
-var bit_url=v.data.url;<br>
-$("#result").html('<a href="'+bit_url+'" target="_blank">'+bit_url+'</a>');<br>
-}<br>
-});<br>
-```
-</li>
-<li>
-Add your source/medium combinations to the placement dropdown by finding this section of code in this file. The optgroup label don't affect any functionality but make it look a bit tidier and help reinforce the link between source and medium.<br><br>
-<div class="well well-sm">
+Sign up to bit.ly. In the settings section copy the legacy api key and your user name. Open this file (index.html) in a text editor and find and replace the bit.ly username and key listed with your own account.
 
+```
+$(document).ready(function()
+{
+ function bit_url(url)
+{
+var url=url;
+var username="";
+var key="";
+$.ajax({
+url:"http://api.bit.ly/v3/shorten",
+data:{longUrl:url,apiKey:key,login:username},
+dataType:"jsonp",
+success:function(v)
+{
+var bit_url=v.data.url;
+$("#result").html('<a href="'+bit_url+'" target="_blank">'+bit_url+'</a>');
+}
+});
+```
+
+
+
+Add your source/medium combinations to the placement dropdown by finding this section of code in this file. The optgroup label don't affect any functionality but make it look a bit tidier and help reinforce the link between source and medium.<br><br>
+```
     &#x3C;select id=&#x22;utm_source&#x22; name=&#x22;utm_source&#x22; class=&#x22;input-xlarge&#x22; onchange=&#x22;setmedium(this.value); javascript: changeSubcat(this.options[this.selectedIndex].value);&#x22;&#x3E;<br><br>
             &#x3C;option&#x3E;-&#x3C;/option&#x3E;<br>
             &#x3C;optgroup label=&#x22;Social&#x22;&#x3E;<br>
@@ -54,14 +55,12 @@ Add your source/medium combinations to the placement dropdown by finding this se
      &#x3C;option value=&#x22;Banner&#x22;&#x3E;Banner&#x3C;/option&#x3E;<br><br>
             &#x3C;optgroup label=&#x22;Outdoor&#x22;&#x3E;<br>
      &#x3C;option value=&#x22;Poster&#x22;&#x3E;Poster&#x3C;/option&#x3E;<br><br>
-    &#x3C;/select&#x3E;<br>
+    &#x3C;/select&#x3E;
+```
 
-<br>
-</div>
-</li>
-<li>
-Find this section of code and create any new rules you need. You'll need to add in any new sources you've added to the placement dropdown and add which medium it should select behind the scenes. In this case FacebookAd, twitter, youtube etc.. are sources and match the placement dropdown values, if they are selected 'social' will be added as the medium. "||" means OR. I.E. If you select FacebookAd or twitter or youtube as the source then the medium is social.<br><br>
-<div class="well well-sm">
+Find this section of code and create any new rules you need. You'll need to add in any new sources you've added to the placement dropdown and add which medium it should select behind the scenes. In this case FacebookAd, twitter, youtube etc.. are sources and match the placement dropdown values, if they are selected 'social' will be added as the medium. "||" means OR. I.E. If you select FacebookAd or twitter or youtube as the source then the medium is social.
+
+```
 &#x3C;script type=&#x22;text/javascript&#x22;&#x3E;<br>
     &#x3C;!--<br>
 <br>
@@ -85,7 +84,7 @@ Find this section of code and create any new rules you need. You'll need to add 
 <br>
     }<br>
 &#x3C;/script&#x3E;<br>
-</div>
+```
 
 </li>
 <li>

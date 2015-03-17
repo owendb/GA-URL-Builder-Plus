@@ -12,7 +12,7 @@ We built a [webpage tool](#) to replace <a href="https://support.google.com/anal
 
 
 
-Sign up to bit.ly. In the settings section copy the legacy api key and your user name. Open this file (index.html) in a text editor and find and replace the bit.ly account listed with your own account.
+Sign up to bit.ly. In the settings section copy the legacy api key and your user name. Open this file (index.html) in a text editor and find and replace the bit.ly username and key listed with your own account.
 
 ```
 $(document).ready(function()
@@ -35,10 +35,9 @@ $("#result").html('<a href="'+bit_url+'" target="_blank">'+bit_url+'</a>');
 ```
 
 
-<li>
-Add your source/medium combinations to the placement dropdown by finding this section of code in this file. The optgroup label don't affect any functionality but make it look a bit tidier and help reinforce the link between source and medium.<br><br>
-<div class="well well-sm">
 
+Add your source/medium combinations to the placement dropdown by finding this section of code in this file. The optgroup label don't affect any functionality but make it look a bit tidier and help reinforce the link between source and medium.<br><br>
+```
     &#x3C;select id=&#x22;utm_source&#x22; name=&#x22;utm_source&#x22; class=&#x22;input-xlarge&#x22; onchange=&#x22;setmedium(this.value); javascript: changeSubcat(this.options[this.selectedIndex].value);&#x22;&#x3E;<br><br>
             &#x3C;option&#x3E;-&#x3C;/option&#x3E;<br>
             &#x3C;optgroup label=&#x22;Social&#x22;&#x3E;<br>
@@ -56,14 +55,12 @@ Add your source/medium combinations to the placement dropdown by finding this se
      &#x3C;option value=&#x22;Banner&#x22;&#x3E;Banner&#x3C;/option&#x3E;<br><br>
             &#x3C;optgroup label=&#x22;Outdoor&#x22;&#x3E;<br>
      &#x3C;option value=&#x22;Poster&#x22;&#x3E;Poster&#x3C;/option&#x3E;<br><br>
-    &#x3C;/select&#x3E;<br>
+    &#x3C;/select&#x3E;
+```
 
-<br>
-</div>
-</li>
-<li>
-Find this section of code and create any new rules you need. You'll need to add in any new sources you've added to the placement dropdown and add which medium it should select behind the scenes. In this case FacebookAd, twitter, youtube etc.. are sources and match the placement dropdown values, if they are selected 'social' will be added as the medium. "||" means OR. I.E. If you select FacebookAd or twitter or youtube as the source then the medium is social.<br><br>
-<div class="well well-sm">
+Find this section of code and create any new rules you need. You'll need to add in any new sources you've added to the placement dropdown and add which medium it should select behind the scenes. In this case FacebookAd, twitter, youtube etc.. are sources and match the placement dropdown values, if they are selected 'social' will be added as the medium. "||" means OR. I.E. If you select FacebookAd or twitter or youtube as the source then the medium is social.
+
+```
 &#x3C;script type=&#x22;text/javascript&#x22;&#x3E;<br>
     &#x3C;!--<br>
 <br>
@@ -87,12 +84,11 @@ Find this section of code and create any new rules you need. You'll need to add 
 <br>
     }<br>
 &#x3C;/script&#x3E;<br>
-</div>
+```
 
-</li>
-<li>
+
 Add your campaigns to the campaign dropdown. Update as you get new campaigns<br><br>
-<div class="well well-sm">
+```
 
     &#x3C;select id=&#x22;utm_campaign&#x22; name=&#x22;utm_campaign&#x22; class=&#x22;input-xlarge&#x22;&#x3E;<br>
               &#x3C;option&#x3E;-&#x3C;/option&#x3E;<br>
@@ -101,13 +97,11 @@ Add your campaigns to the campaign dropdown. Update as you get new campaigns<br>
               &#x3C;option&#x3E;Ice Bucket Challenge&#x3C;/option&#x3E;<br>
               &#x3C;option&#x3E;Our Great Campaign&#x3C;/option&#x3E;<br>
     &#x3C;/select&#x3E;
-</div>
-</li>
-<li>
+```
+
 Host the whole folder on a network drive or on an internal server (the bit.ly api key is stored in the open so you don't want this somewhere publically accessible, the trade off in security makes the tool a more portable and easily editable. We put it on a shared network drive)
-</li>  
-</ul>
-</div>
+
+### Something
 Yes please do, fork away. It could do with a couple of things tweaking
 
 - Move from the depreciated bit.ly api we're currently using.
