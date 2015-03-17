@@ -76,7 +76,7 @@ $(document).ready(function()
  function bit_url(url)
 {
 var url=url;
-var username="";
+var username="gaurlplus";
 var key="";
 $.ajax({
 url:"http://api.bit.ly/v3/shorten",
@@ -299,7 +299,7 @@ Host the whole folder on a network drive or on an internal server (the bit.ly ap
 <!-- Form Name -->
  
 <!-- Text input-->
-<h1><small>Step 1: Paste URL the box below.</small></h1>
+<h1><small>Step 1: Paste the URL below.</small></h1>
 <div class="control-group">
   <label class="control-label" for="website">URL</label>
   <div class="controls">
@@ -309,7 +309,7 @@ Host the whole folder on a network drive or on an internal server (the bit.ly ap
  
   </div>
 </div>
-<h1><small>Step 2: Fill out the placement details below</small></h1>
+<h1><small>Step 2: Fill out the details</small></h1>
 <!-- Select Basic -->
  
 <script type="text/javascript">
