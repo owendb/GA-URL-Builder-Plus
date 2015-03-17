@@ -1,0 +1,40 @@
+# GA-URL-Builder-Plus
+Google Analytics URL tracked campaign link builder. Simplified URL parameter builder for use in orgs with multiple staff posting links,u create rules to link source and medium, ensure consistant spellings for campaign names and built in URL shortening with Bit.ly
+
+## Intro
+We built a [webpage tool](#) to replace <a href="https://support.google.com/analytics/answer/1033867?hl=en-GB" target="_blank">this</a> one by Google. so that users can paste in a link and get the url parameters they need to track their campaign in Google Analytics. It's been designed to let multiple users across an organisation add tracking in a consistent way that doesn't require them to have any knowledge of Google Analytics. Resulting in clean crisp campaign data having to worry about _email_ being both _utm&#95;medium_ and _utm&#95;source_ or worse still no tracking added at all. 
+
+* [Demo](#)
+* [Download it as a zip](https://github.com/owendb/GA-URL-Builder-Plus/archive/master.zip) (with setup instructions). 
+* [Fork it on GitHub](https://github.com/owendb/GA-URL-Builder-Plus/fork).
+##Instructions
+
+###Before use
+
+Log in to your bit.ly account. Open index.html and find 
+
+```
+test
+```
+
+###Adding your campaigns
+
+Edit the html
+
+###Tweaking the source and medium
+
+Edit the html
+
+## Can I contribute to this?
+
+Yes please do, fork away. It could do with a couple of things tweaking
+
+- Move from the depreciated bit.ly api we're currently using.
+- Suss out a more elegant way to add campaigns rather than editting the HTML. Google Sheets? Separate text file?
+
+## Credits
+
+Owen & Jim @ Leukaemia & Lymphoma Research
+
+Tom @ The Royal Marsden Charity
+
