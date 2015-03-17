@@ -97,7 +97,7 @@ Add your campaigns to the campaign dropdown. Update as you get new campaigns
 
 Host the whole folder on a network drive or on an internal server (the bit.ly api key is stored in the open so you don't want this somewhere publically accessible, the trade off in security makes the tool a more portable and easily editable. We put it on a shared network drive)
 
-### Something
+### Can I help?
 Yes please do, fork away. It could do with a couple of things tweaking
 
 - Move from the depreciated bit.ly api we're currently using.
