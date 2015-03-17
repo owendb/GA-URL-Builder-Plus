@@ -10,30 +10,31 @@ We built a [webpage tool](#) to replace <a href="https://support.google.com/anal
 
 ##Instructions
 
-    <div id="collapseinst" class="panel-collapse collapse">
-<ul>
-<li>
-Sign up to bit.ly. In the settings section copy the legacy api key and your user name. Open this file (index.html) in a text editor and find and replace the bit.ly account listed with your own account.<br><br>
-<div class="well well-sm">
-$(document).ready(function()<br>
-{<br>
- function bit_url(url)<br>
-{<br>
-var url=url;<br><br>
-<strong>var username="";<br>
-var key="";</strong><br><br>
-$.ajax({<br>
-url:"http://api.bit.ly/v3/shorten",<br>
-data:{longUrl:url,apiKey:key,login:username},<br>
-dataType:"jsonp",<br>
-success:function(v)<br>
-{<br>
-var bit_url=v.data.url;<br>
-$("#result").html('<a href="'+bit_url+'" target="_blank">'+bit_url+'</a>');<br>
-}<br>
-});<br>
-</div>
-</li>
+
+
+Sign up to bit.ly. In the settings section copy the legacy api key and your user name. Open this file (index.html) in a text editor and find and replace the bit.ly account listed with your own account.
+
+```
+$(document).ready(function()
+{
+ function bit_url(url)
+{
+var url=url;
+var username="";
+var key="";
+$.ajax({
+url:"http://api.bit.ly/v3/shorten",
+data:{longUrl:url,apiKey:key,login:username},
+dataType:"jsonp",
+success:function(v)
+{
+var bit_url=v.data.url;
+$("#result").html('<a href="'+bit_url+'" target="_blank">'+bit_url+'</a>');
+}
+});
+```
+
+
 <li>
 Add your source/medium combinations to the placement dropdown by finding this section of code in this file. The optgroup label don't affect any functionality but make it look a bit tidier and help reinforce the link between source and medium.<br><br>
 <div class="well well-sm">
