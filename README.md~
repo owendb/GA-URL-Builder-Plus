@@ -36,25 +36,25 @@ $("#result").html('<a href="'+bit_url+'" target="_blank">'+bit_url+'</a>');
 
 
 
-Add your source/medium combinations to the placement dropdown by finding this section of code in this file. The optgroup label don't affect any functionality but make it look a bit tidier and help reinforce the link between source and medium.<br><br>
+Add your source/medium combinations to the placement dropdown by finding this section of code in this file. The optgroup label don't affect any functionality but make it look a bit tidier and help reinforce the link between source and medium.
 ```
-    <select id="utm_source" name="utm_source" class="input-xlarge" onchange="setmedium(this.value); javascript: changeSubcat(this.options[this.selectedIndex].value);"><br><br>
-            <option>-</option><br>
-            <optgroup label="Social"><br>
-            <option value="FacebookPost">Facebook Post</option><br>
-            <option value="FacebookAd">Facebook Ad</option><br>
-            <option value="twitter">Twitter</option><br>
-            <option value="youtube">YouTube</option><br>
-            <option value="pinterest">Pinterest</option><br>
-            <option value="flickr">Flickr</option><br><br>
-            <optgroup label="Email"><br>
-            <option value="email_signature">Email signature</option><br>
-            <option value="general_enews">Monthly Enews</option><br>
-            <option value="single_enews">Single Enews</option><br>
-            <optgroup label="Display"><br>
-     <option value="Banner">Banner</option><br><br>
-            <optgroup label="Outdoor"><br>
-     <option value="Poster">Poster</option><br><br>
+    <select id="utm_source" name="utm_source" class="input-xlarge" onchange="setmedium(this.value); javascript: changeSubcat(this.options[this.selectedIndex].value);">
+            <option>-</option>
+            <optgroup label="Social">
+            <option value="FacebookPost">Facebook Post</option>
+            <option value="FacebookAd">Facebook Ad</option>
+            <option value="twitter">Twitter</option>
+            <option value="youtube">YouTube</option>
+            <option value="pinterest">Pinterest</option>
+            <option value="flickr">Flickr</option>
+            <optgroup label="Email">
+            <option value="email_signature">Email signature</option>
+            <option value="general_enews">Monthly Enews</option>
+            <option value="single_enews">Single Enews</option>
+            <optgroup label="Display">
+     <option value="Banner">Banner</option>
+            <optgroup label="Outdoor">
+     <option value="Poster">Poster</option>
     </select>
 ```
 
@@ -83,15 +83,15 @@ Find this section of code and create any new rules you need. You'll need to add 
 ```
 
 
-Add your campaigns to the campaign dropdown. Update as you get new campaigns<br><br>
+Add your campaigns to the campaign dropdown. Update as you get new campaigns
 ```
 
-    <select id="utm_campaign" name="utm_campaign" class="input-xlarge"><br>
-              <option>-</option><br>
-              <option>London Marathon</option><br>
-              <option>Research News</option><br>
-              <option>Ice Bucket Challenge</option><br>
-              <option>Our Great Campaign</option><br>
+    <select id="utm_campaign" name="utm_campaign" class="input-xlarge">
+              <option>-</option>
+              <option>London Marathon</option>
+              <option>Research News</option>
+              <option>Ice Bucket Challenge</option>
+              <option>Our Great Campaign</option>
     </select>
 ```
 
