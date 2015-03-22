@@ -77,7 +77,7 @@ $(document).ready(function()
 {
 var url=url;
 var username="gaurlplus";
-var key="";
+var key="R_4a672ef39bbe4379a7379fc1e40da44d";
 $.ajax({
 url:"http://api.bit.ly/v3/shorten",
 data:{longUrl:url,apiKey:key,login:username},
