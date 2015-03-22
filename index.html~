@@ -131,165 +131,7 @@ return false;
                                     </div>
                                    
 <strong>Simplified Google Analytics campaign parameter URL tracking builder</strong>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseintro">
-          <small>more info +</small>
-        </a>
-      </h4>
-    </div>
-    <div id="collapseintro" class="panel-collapse collapse">
-            <p>A simplified URL parameter builder for use in orgs with multiple staff posting links.
-            </p>This tool has been designed to let multiple users across an organisation add Google Analytics URL tracking to their links in a consistent way that doesn't require indepth knowledge of Google Analyics. Resulting in clean crisp campaign data in Google Analytics and people not having to worry about whether something is a 'medium' or a 'source'. It's a suped up but simplified version of <a href="https://support.google.com/analytics/answer/1033867?hl=en-GB" target="_blank">this</a>. As a bonus it's got built in Bit.ly shortening
-                        
-                        <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapsewhylinks">
-          <small>Why track links?</small>
-        </a>
-      </h4>
-           <div id="collapsewhylinks" class="panel-collapse collapse">By tracking links that we can find out how the people who clicked the link used our website. For eaxmple: How many people clicked, what time they clicked, whether they went on to transact on our website etc... For more information check one of these blogs: <a href="http://www.orbitmedia.com/blog/google-analytics-url-builder/">1</a> <a href="<a href="http://sproutsocial.com/insights/google-analytics/">2</a></div>
-                        <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseinst">
-          <small>Setup instructions</small>
-        </a>
-      </h4>
- 
-    <div id="collapseinst" class="panel-collapse collapse">
-<ul>
-<li>
-Sign up to bit.ly. In the settings section copy the legacy api key and your user name. Open this file (index.html) in a text editor and find and replace the bit.ly account listed with your own account.<br><br>
-<div class="well well-sm">
-$(document).ready(function()<br>
-{<br>
- function bit_url(url)<br>
-{<br>
-var url=url;<br><br>
-<strong>var username="";<br>
-var key="";</strong><br><br>
-$.ajax({<br>
-url:"http://api.bit.ly/v3/shorten",<br>
-data:{longUrl:url,apiKey:key,login:username},<br>
-dataType:"jsonp",<br>
-success:function(v)<br>
-{<br>
-var bit_url=v.data.url;<br>
-$("#result").html('<a href="'+bit_url+'" target="_blank">'+bit_url+'</a>');<br>
-}<br>
-});<br>
-</div>
-</li>
-<li>
-Add your source/medium combinations to the placement dropdown by finding this section of code in this file. The optgroup label don't affect any functionality but make it look a bit tidier and help reinforce the link between source and medium.<br><br>
-<div class="well well-sm">
-
-    &#x3C;select id=&#x22;utm_source&#x22; name=&#x22;utm_source&#x22; class=&#x22;input-xlarge&#x22; onchange=&#x22;setmedium(this.value); javascript: changeSubcat(this.options[this.selectedIndex].value);&#x22;&#x3E;<br><br>
-            &#x3C;option&#x3E;-&#x3C;/option&#x3E;<br>
-            &#x3C;optgroup label=&#x22;Social&#x22;&#x3E;<br>
-            &#x3C;option value=&#x22;FacebookPost&#x22;&#x3E;Facebook Post&#x3C;/option&#x3E;<br>
-            &#x3C;option value=&#x22;FacebookAd&#x22;&#x3E;Facebook Ad&#x3C;/option&#x3E;<br>
-            &#x3C;option value=&#x22;twitter&#x22;&#x3E;Twitter&#x3C;/option&#x3E;<br>
-            &#x3C;option value=&#x22;youtube&#x22;&#x3E;YouTube&#x3C;/option&#x3E;<br>
-            &#x3C;option value=&#x22;pinterest&#x22;&#x3E;Pinterest&#x3C;/option&#x3E;<br>
-            &#x3C;option value=&#x22;flickr&#x22;&#x3E;Flickr&#x3C;/option&#x3E;<br><br>
-            &#x3C;optgroup label=&#x22;Email&#x22;&#x3E;<br>
-            &#x3C;option value=&#x22;email_signature&#x22;&#x3E;Email signature&#x3C;/option&#x3E;<br>
-            &#x3C;option value=&#x22;general_enews&#x22;&#x3E;Monthly Enews&#x3C;/option&#x3E;<br>
-            &#x3C;option value=&#x22;single_enews&#x22;&#x3E;Single Enews&#x3C;/option&#x3E;<br>
-            &#x3C;optgroup label=&#x22;Display&#x22;&#x3E;<br>
-     &#x3C;option value=&#x22;Banner&#x22;&#x3E;Banner&#x3C;/option&#x3E;<br><br>
-            &#x3C;optgroup label=&#x22;Outdoor&#x22;&#x3E;<br>
-     &#x3C;option value=&#x22;Poster&#x22;&#x3E;Poster&#x3C;/option&#x3E;<br><br>
-    &#x3C;/select&#x3E;<br>
-
-<br>
-</div>
-</li>
-<li>
-Find this section of code and create any new rules you need. You'll need to add in any new sources you've added to the placement dropdown and add which medium it should select behind the scenes. In this case FacebookAd, twitter, youtube etc.. are sources and match the placement dropdown values, if they are selected 'social' will be added as the medium. "||" means OR. I.E. If you select FacebookAd or twitter or youtube as the source then the medium is social.<br><br>
-<div class="well well-sm">
-&#x3C;script type=&#x22;text/javascript&#x22;&#x3E;<br>
-    &#x3C;!--<br>
-<br>
-    function setmedium(source) {<br>
-<br>
-        mysource = source;<br>
-<br>
-        if (mysource == &#x22;<strong>FacebookAd</strong>&#x22; || mysource == &#x22;<strong>twitter</strong>&#x22; || mysource == &#x22;<strong>youtube</strong>&#x22; || mysource == &#x22;<strong>flickr</strong>&#x22; || mysource == &#x22;<strong>pinterest</strong>&#x22; || mysource == &#x22;<strong>FacebookPost</strong>&#x22;) {<br>
-            document.ctm.utm_medium.value = &#x22;<strong>social</strong>&#x22;;}<br><br>
-         else if (mysource == &#x22;email_signature&#x22; || mysource == &#x22;general_enews&#x22; || mysource == &#x22;single_enews&#x22; || mysource == &#x22;email_signature&#x22;) {<br>
-<br>
-            document.ctm.utm_medium.value = &#x22;email&#x22;;}<br>
-<br>
-         else if (mysource == &#x22;newsadvert&#x22; || mysource == &#x22;newsarticle&#x22; || mysource == &#x22;pressrelease&#x22;) {<br>
-<br>
-            document.ctm.utm_medium.value = &#x22;press&#x22;;}<br>
-<br>
-         else if (mysource == &#x22;poster&#x22;) {<br>
-<br>
-            document.ctm.utm_medium.value = &#x22;outdoor&#x22;;}<br>
-<br>
-    }<br>
-&#x3C;/script&#x3E;<br>
-</div>
-
-</li>
-<li>
-Add your campaigns to the campaign dropdown. Update as you get new campaigns<br><br>
-<div class="well well-sm">
-
-    &#x3C;select id=&#x22;utm_campaign&#x22; name=&#x22;utm_campaign&#x22; class=&#x22;input-xlarge&#x22;&#x3E;<br>
-              &#x3C;option&#x3E;-&#x3C;/option&#x3E;<br>
-              &#x3C;option&#x3E;London Marathon&#x3C;/option&#x3E;<br>
-              &#x3C;option&#x3E;Research News&#x3C;/option&#x3E;<br>
-              &#x3C;option&#x3E;Ice Bucket Challenge&#x3C;/option&#x3E;<br>
-              &#x3C;option&#x3E;Our Great Campaign&#x3C;/option&#x3E;<br>
-    &#x3C;/select&#x3E;
-</div>
-</li>
-<li>
-Host the whole folder on a network drive or on an internal server (the bit.ly api key is stored in the open so you don't want this somewhere publically accessible, the trade off in security makes the tool a more portable and easily editable. We put it on a shared network drive)
-</li>  
-</ul>
-</div>
-
-<div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-          <small>Credits</small>
-        </a>
-      </h4>
-    </div>
-
-<div id="collapseTwo" class="panel-collapse collapse">
-<div class="panel-body">
-<strong>Built by</strong><br><br>
-                     
-                       <a href="https://twitter.com/tweetsfromowen">@tweetsfromowen</a> <br><a href="https://twitter.com/james_south">@james_south</a><br><a href="https://twitter.com/thomasmpreston">@thomasmpreston</a><br><br>@<br><br>
-                     
-                        <img src="http://leukaemialymphomaresearch.org.uk/sites/all/themes/llr/assets/images/site/logo.png"><br><br>&<br><br>
-                        <img src="http://www.royalmarsden.org/view.image?Id=1264">
-                      
-                       </div><br>
-                        <strong>Using code examples from</strong><a href="https://support.google.com/analytics/answer/1033867?hl=en-GB"> Google</a> & <a href="http://www.9lessons.info/2010/08/create-bitly-short-urls-using-jquery.htmlTech">9 lessons</a><br><br>
-                        <strong>Nifty Bootstrap courtesy of</strong> <a href="http://www.layoutit.com/">Layoutit</a> & <a href="http://minikomi.github.io/Bootstrap-Form-Builder/">Minikomi</a> <br><br>Any comments to <a href="mailto:owen.bowden@gmail.com">Owen</a><br><br>
-            </div>
-    </div>
-  </div>
-
-
-            </div>
- 
- 
-           
-            <a href="https://github.com/owendb/GA-URL-Builder-Plus/fork">Download .zip</a> 
-<br>
-   <a href="https://github.com/owendb/GA-URL-Builder-Plus/fork">Fork on GitHub</a>
-
-
-  </div>                                   
-                                   
-                                   
+               
                                    
                                    
  
@@ -469,7 +311,171 @@ return encodeURIComponent(value);
 }
 </script>
 
-            </div>
+ <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseintro">
+          <small>more info +</small>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseintro" class="panel-collapse collapse">
+            <p>A simplified URL parameter builder for use in orgs with multiple staff posting links.
+            </p>This tool has been designed to let multiple users across an organisation add Google Analytics URL tracking to their links in a consistent way that doesn't require indepth knowledge of Google Analyics. Resulting in clean crisp campaign data in Google Analytics and people not having to worry about whether something is a 'medium' or a 'source'. It's a suped up but simplified version of <a href="https://support.google.com/analytics/answer/1033867?hl=en-GB" target="_blank">this</a>. As a bonus it's got built in Bit.ly shortening
+                        
+                        <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapsewhylinks">
+          <small>Why track links?</small>
+        </a>
+      </h4>
+           <div id="collapsewhylinks" class="panel-collapse collapse">By tracking links that we can find out how the people who clicked the link used our website. For eaxmple: How many people clicked, what time they clicked, whether they went on to transact on our website etc... For more information check one of these blogs: <a href="http://www.orbitmedia.com/blog/google-analytics-url-builder/">1</a> <a href="<a href="http://sproutsocial.com/insights/google-analytics/">2</a></div>
+                        <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseinst">
+          <small>Setup instructions</small>
+        </a>
+      </h4>
+ 
+    <div id="collapseinst" class="panel-collapse collapse">
+<ul>
+<li>
+Sign up to bit.ly. In the settings section copy the legacy api key and your user name. Open this file (index.html) in a text editor and find and replace the bit.ly account listed with your own account.<br><br>
+<div class="well well-sm">
+$(document).ready(function()<br>
+{<br>
+ function bit_url(url)<br>
+{<br>
+var url=url;<br><br>
+<strong>var username="";<br>
+var key="";</strong><br><br>
+$.ajax({<br>
+url:"http://api.bit.ly/v3/shorten",<br>
+data:{longUrl:url,apiKey:key,login:username},<br>
+dataType:"jsonp",<br>
+success:function(v)<br>
+{<br>
+var bit_url=v.data.url;<br>
+$("#result").html('<a href="'+bit_url+'" target="_blank">'+bit_url+'</a>');<br>
+}<br>
+});<br>
 </div>
+</li>
+<li>
+Add your source/medium combinations to the placement dropdown by finding this section of code in this file. The optgroup label don't affect any functionality but make it look a bit tidier and help reinforce the link between source and medium.<br><br>
+<div class="well well-sm">
+
+    &#x3C;select id=&#x22;utm_source&#x22; name=&#x22;utm_source&#x22; class=&#x22;input-xlarge&#x22; onchange=&#x22;setmedium(this.value); javascript: changeSubcat(this.options[this.selectedIndex].value);&#x22;&#x3E;<br><br>
+            &#x3C;option&#x3E;-&#x3C;/option&#x3E;<br>
+            &#x3C;optgroup label=&#x22;Social&#x22;&#x3E;<br>
+            &#x3C;option value=&#x22;FacebookPost&#x22;&#x3E;Facebook Post&#x3C;/option&#x3E;<br>
+            &#x3C;option value=&#x22;FacebookAd&#x22;&#x3E;Facebook Ad&#x3C;/option&#x3E;<br>
+            &#x3C;option value=&#x22;twitter&#x22;&#x3E;Twitter&#x3C;/option&#x3E;<br>
+            &#x3C;option value=&#x22;youtube&#x22;&#x3E;YouTube&#x3C;/option&#x3E;<br>
+            &#x3C;option value=&#x22;pinterest&#x22;&#x3E;Pinterest&#x3C;/option&#x3E;<br>
+            &#x3C;option value=&#x22;flickr&#x22;&#x3E;Flickr&#x3C;/option&#x3E;<br><br>
+            &#x3C;optgroup label=&#x22;Email&#x22;&#x3E;<br>
+            &#x3C;option value=&#x22;email_signature&#x22;&#x3E;Email signature&#x3C;/option&#x3E;<br>
+            &#x3C;option value=&#x22;general_enews&#x22;&#x3E;Monthly Enews&#x3C;/option&#x3E;<br>
+            &#x3C;option value=&#x22;single_enews&#x22;&#x3E;Single Enews&#x3C;/option&#x3E;<br>
+            &#x3C;optgroup label=&#x22;Display&#x22;&#x3E;<br>
+     &#x3C;option value=&#x22;Banner&#x22;&#x3E;Banner&#x3C;/option&#x3E;<br><br>
+            &#x3C;optgroup label=&#x22;Outdoor&#x22;&#x3E;<br>
+     &#x3C;option value=&#x22;Poster&#x22;&#x3E;Poster&#x3C;/option&#x3E;<br><br>
+    &#x3C;/select&#x3E;<br>
+
+<br>
+</div>
+</li>
+<li>
+Find this section of code and create any new rules you need. You'll need to add in any new sources you've added to the placement dropdown and add which medium it should select behind the scenes. In this case FacebookAd, twitter, youtube etc.. are sources and match the placement dropdown values, if they are selected 'social' will be added as the medium. "||" means OR. I.E. If you select FacebookAd or twitter or youtube as the source then the medium is social.<br><br>
+<div class="well well-sm">
+&#x3C;script type=&#x22;text/javascript&#x22;&#x3E;<br>
+    &#x3C;!--<br>
+<br>
+    function setmedium(source) {<br>
+<br>
+        mysource = source;<br>
+<br>
+        if (mysource == &#x22;<strong>FacebookAd</strong>&#x22; || mysource == &#x22;<strong>twitter</strong>&#x22; || mysource == &#x22;<strong>youtube</strong>&#x22; || mysource == &#x22;<strong>flickr</strong>&#x22; || mysource == &#x22;<strong>pinterest</strong>&#x22; || mysource == &#x22;<strong>FacebookPost</strong>&#x22;) {<br>
+            document.ctm.utm_medium.value = &#x22;<strong>social</strong>&#x22;;}<br><br>
+         else if (mysource == &#x22;email_signature&#x22; || mysource == &#x22;general_enews&#x22; || mysource == &#x22;single_enews&#x22; || mysource == &#x22;email_signature&#x22;) {<br>
+<br>
+            document.ctm.utm_medium.value = &#x22;email&#x22;;}<br>
+<br>
+         else if (mysource == &#x22;newsadvert&#x22; || mysource == &#x22;newsarticle&#x22; || mysource == &#x22;pressrelease&#x22;) {<br>
+<br>
+            document.ctm.utm_medium.value = &#x22;press&#x22;;}<br>
+<br>
+         else if (mysource == &#x22;poster&#x22;) {<br>
+<br>
+            document.ctm.utm_medium.value = &#x22;outdoor&#x22;;}<br>
+<br>
+    }<br>
+&#x3C;/script&#x3E;<br>
+</div>
+
+</li>
+<li>
+Add your campaigns to the campaign dropdown. Update as you get new campaigns<br><br>
+<div class="well well-sm">
+
+    &#x3C;select id=&#x22;utm_campaign&#x22; name=&#x22;utm_campaign&#x22; class=&#x22;input-xlarge&#x22;&#x3E;<br>
+              &#x3C;option&#x3E;-&#x3C;/option&#x3E;<br>
+              &#x3C;option&#x3E;London Marathon&#x3C;/option&#x3E;<br>
+              &#x3C;option&#x3E;Research News&#x3C;/option&#x3E;<br>
+              &#x3C;option&#x3E;Ice Bucket Challenge&#x3C;/option&#x3E;<br>
+              &#x3C;option&#x3E;Our Great Campaign&#x3C;/option&#x3E;<br>
+    &#x3C;/select&#x3E;
+</div>
+</li>
+<li>
+Host the whole folder on a network drive or on an internal server (the bit.ly api key is stored in the open so you don't want this somewhere publically accessible, the trade off in security makes the tool a more portable and easily editable. We put it on a shared network drive)
+</li>  
+</ul>
+</div>
+
+<div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          <small>Credits</small>
+        </a>
+      </h4>
+    </div>
+
+<div id="collapseTwo" class="panel-collapse collapse">
+<div class="panel-body">
+<strong>Built by</strong><br><br>
+                     
+                       <a href="https://twitter.com/tweetsfromowen">@tweetsfromowen</a> <br><a href="https://twitter.com/james_south">@james_south</a><br><a href="https://twitter.com/thomasmpreston">@thomasmpreston</a><br><br>@<br><br>
+                     
+                        <img src="http://leukaemialymphomaresearch.org.uk/sites/all/themes/llr/assets/images/site/logo.png"><br><br>&<br><br>
+                        <img src="http://www.royalmarsden.org/view.image?Id=1264">
+                      
+                       </div><br>
+                        <strong>Using code examples from</strong><a href="https://support.google.com/analytics/answer/1033867?hl=en-GB"> Google</a> & <a href="http://www.9lessons.info/2010/08/create-bitly-short-urls-using-jquery.htmlTech">9 lessons</a><br><br>
+                        <strong>Nifty Bootstrap courtesy of</strong> <a href="http://www.layoutit.com/">Layoutit</a> & <a href="http://minikomi.github.io/Bootstrap-Form-Builder/">Minikomi</a> <br><br>Any comments to <a href="mailto:owen.bowden@gmail.com">Owen</a><br><br>
+            </div>
+    </div>
+  </div>
+
+
+            </div>
+
+
+  </div>                                   
+                                   
+                     
+            <a href="https://github.com/owendb/GA-URL-Builder-Plus/archive/master.zip">Download .zip</a> 
+<br>
+   <a href="https://github.com/owendb/GA-URL-Builder-Plus/fork">Fork on GitHub</a>
+            </div>
+
+
+
+</div>
+
+ 
+ 
+           
+
 </body>
 </html>
